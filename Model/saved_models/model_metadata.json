@@ -1,0 +1,71 @@
+{
+    "model_name": "CatBoostClassifier",
+    "task": "Binary Classification \u2014 EV Battery Failure",
+    "target_column": "battery_failure",
+    "best_threshold": 0.28,
+    "best_iteration": 545,
+    "hyperparameters": {
+        "iterations": 806,
+        "learning_rate": 0.041707971572220025,
+        "depth": 9,
+        "l2_leaf_reg": 4.85022662862655,
+        "bagging_temperature": 0.9824688577947887,
+        "random_strength": 1.8255148917901884,
+        "border_count": 47,
+        "loss_function": "Logloss",
+        "eval_metric": "AUC",
+        "scale_pos_weight": 2.5003837298541827,
+        "random_seed": 42,
+        "verbose": 100,
+        "early_stopping_rounds": 50,
+        "task_type": "CPU",
+        "thread_count": -1
+    },
+    "scale_pos_weight": 2.5003837298541827,
+    "cat_features": [
+        "vehicle_brand",
+        "vehicle_model",
+        "vehicle_type",
+        "battery_manufacturer",
+        "battery_chemistry",
+        "drive_type",
+        "fleet_or_private",
+        "terrain_type"
+    ],
+    "engineered_features": [
+        "thermal_stress_composite",
+        "voltage_degradation_index",
+        "charge_discharge_efficiency_gap",
+        "health_decay_rate",
+        "cycle_health_ratio",
+        "fault_pressure_score"
+    ],
+    "id_columns_dropped": [
+        "vehicle_id",
+        "battery_serial"
+    ],
+    "total_features": 73,
+    "train_samples": 18244,
+    "test_samples": 3000,
+    "evaluation_metrics": {
+        "roc_auc": 0.9773,
+        "pr_auc": 0.7644,
+        "f1_score": 0.7231,
+        "f2_score": 0.7897
+    },
+    "confusion_matrix": {
+        "TP": 175,
+        "FP": 101,
+        "FN": 33,
+        "TN": 2691
+    },
+    "cv_results": {
+        "roc_auc_mean": 0.9971,
+        "roc_auc_std": 0.0005,
+        "pr_auc_mean": 0.9921,
+        "pr_auc_std": 0.0011
+    },
+    "smotenc_sampling_strategy": 0.4,
+    "optuna_n_trials": 40,
+    "random_seed": 42
+}
